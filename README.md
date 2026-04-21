@@ -59,17 +59,6 @@ Assumption:
 npm install
 ~~~
 
-Create a .env file in the project root:
-
-~~~env
-DISCORD_BOT_TOKEN=your_bot_token_here
-DISCORD_APP_ID=your_application_id_here
-~~~
-
-Recommended secure updates before running:
-- Replace hardcoded token in [index.js](index.js) with process.env.DISCORD_BOT_TOKEN
-- Replace hardcoded token and app ID in [command.js](command.js) with process.env.DISCORD_BOT_TOKEN and process.env.DISCORD_APP_ID
-
 Run command deployment:
 
 ~~~bash
@@ -135,47 +124,6 @@ The command deployment script uses REST.put with Routes.applicationCommands to r
 ~~~js
 await rest.put(Routes.applicationCommands(APP_ID), { body: commands });
 ~~~
-
-# 📸 Screenshots / Demo (if applicable)
-
-Suggested additions:
-- Bot responding to a normal message
-- Bot responding to create input
-- Slash command suggestion list with /ping
-- Terminal output showing successful command registration
-
-You can place images in an assets folder and reference them in this README.
-
-# 🔐 Environment Variables
-
-Required variables:
-
-- DISCORD_BOT_TOKEN: Bot authentication token from Discord Developer Portal
-- DISCORD_APP_ID: Discord application ID used for slash command registration
-
-Optional variables for future growth:
-
-- DISCORD_GUILD_ID: For guild-scoped command deployment during faster testing
-- NODE_ENV: Runtime mode such as development or production
-
-# 🧪 Possible Improvements
-
-- Replace hardcoded credentials with dotenv-based secure config
-- Add robust command parsing and URL validation for create input
-- Support guild-specific command registration for faster command updates in development
-- Add structured logging and error boundaries for all event handlers
-- Add unit and integration tests for message and interaction logic
-- Implement rate limiting and permission checks
-- Split logic into modules such as handlers, services, and config
-
-# 🤝 Contributing
-
-1. Fork the repository.
-2. Create a feature branch.
-3. Make focused changes with clear commit messages.
-4. Test your changes locally.
-5. Open a pull request with a concise description.
-
 # 📜 License
 
 MIT License
